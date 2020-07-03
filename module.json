@@ -1,0 +1,27 @@
+{
+	"name": "dc-base",
+	"title": "Darkcraft Core Library",
+	"description": "A module that provides some core shared functionality",
+	"version": "1.0.0",
+	"author": "shane_booth",
+	"esmodules": [
+        "scripts/dccore.js"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"socket": false,
+	"minimumCoreVersion": "0.6.4",
+	"compatibleCoreVersion": "0.6.4",
+	"system": "dnd5e",
+	"styles": [
+		"./css/dc-base.css"
+	],
+	"url": "https://github.com/DarkholmeTenk/foundry-dc-base",
+	"manifest": "https://raw.githubusercontent.com/DarkholmeTenk/foundry-dc-base/master/module.json",
+	"download": "https://github.com/DarkholmeTenk/foundry-dc-base/archive/master.zip"
+}
