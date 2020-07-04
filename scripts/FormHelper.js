@@ -123,6 +123,7 @@ export class DCForm extends FormApplication {
         html.find("button[name='dc-submit']").on("click", async ev=>{
             ev.preventDefault()
             await this.submit()
+            log.debug("Saving", this.data)
             await this.onSave()
         })
 	}
