@@ -5,7 +5,8 @@
 	"version": "1.0.2",
 	"author": "shane_booth",
 	"esmodules": [
-        "scripts/dccore.js"
+		"scripts/dccore.js",
+		"scripts/itemMerger.js"
 	],
 	"languages": [
 		{
