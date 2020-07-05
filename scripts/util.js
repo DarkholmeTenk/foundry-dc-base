@@ -16,4 +16,10 @@ export function getLoggerFactory(modName) {
 	}
 }
 
+Array.prototype.forEachAsync = function(fun) {
+	return Promise.all(this.map(function() {
+		return fun(...arguments)
+	}))
+}
+
 export const getLogger = getLoggerFactory("DC-Core")
