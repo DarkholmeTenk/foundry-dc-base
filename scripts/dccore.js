@@ -1,3 +1,5 @@
+import { mergeItemData } from "./itemMerger.js"
+
 class FunMenu extends ContextMenu {
 	async close() {}
 }
@@ -46,6 +48,13 @@ Hooks.on('createToken', async (scene, data)=>{
 		if(Object.keys(updateData).length !== 0) {
 			let tokenEntity = new Token(data)
 			tokenEntity.scene = scene
+
+			if(updateData.items) {
+				let items = mergeItemData(updateData.items)
+				await tokenEntity.actor.createOwnedItem(items)
+				delete updateData.items
+			}
+
 			await tokenEntity.update(updateData)
 		}
 	}
