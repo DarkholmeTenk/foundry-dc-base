@@ -38,7 +38,7 @@ registerMenuButtonsHandler(["itemSheet", "rollTableConfig", "actorSheet"])
 Hooks.on('createToken', async (scene, data)=>{
 	let {_id: id, actorId, actorLink} = data
 	let actor = game.actors.get(actorId)
-	if(!actorLink) {
+	if(actor.owner && !actorLink) {
 		let promises = []
 		let update = (updateData)=>promises.push(updateData)
 		Hooks.callAll("createTokenMutate", update, {scene, actor, token: data})

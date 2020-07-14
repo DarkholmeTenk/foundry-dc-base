@@ -22,6 +22,14 @@ Array.prototype.forEachAsync = function(fun) {
 	}))
 }
 
+Array.prototype.forEachAsyncOrdered = async function(fun) {
+	for (let i in this) {
+		if(isNaN(parseInt(i))) { continue }
+		let value = this[i]
+		await fun(value, i, this)
+	}
+}
+
 export const getLogger = getLoggerFactory("DC-Core")
 const log = getLogger("Util")
 
