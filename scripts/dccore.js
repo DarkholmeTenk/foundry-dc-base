@@ -17,10 +17,11 @@ function registerMenuButtonsHandler(names) {
 			}
 			Hooks.callAll(`${name}MenuItems`, addMenuItem, ...arguments)
 			if(menuItems.length > 0) {
+				let expanded = menuItems.length < 3
 				menuItems.forEach(mi=>{
 					let clz = mi.name.replace(" ", "-").toLowerCase()
 					let dotClz = "." + clz
-					let btn = $(`<a class="${clz}" title="${mi.name}">${mi.icon}${mi.name}</a>`)
+					let btn = expanded? $(`<a class="${clz}" title="${mi.name}">${mi.icon}${mi.name}</a>`) : $(`<a class="${clz}" title="${mi.name}">${mi.icon}</a>`)
 					if(mi.callback) {
 						btn.click(e=>mi.callback(e))
 					}

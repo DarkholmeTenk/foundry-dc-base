@@ -49,7 +49,7 @@ export function mergeItemData(items) {
 
 Hooks.on("actorSheetMenuItems", (add, app)=>{
 	let actor = app.object
-	if(actor.owner && !actor.isToken && actor.isPC) {
+	if(actor.owner) {
 		add({
 			name: "Merge Items",
 			icon: '<i class="fas fa-sort-amount-up"></i>',
