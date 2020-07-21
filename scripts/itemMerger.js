@@ -1,4 +1,5 @@
 import { getLogger, isEqual, clone } from "./util.js"
+import Item5e from "../../../systems/dnd5e/module/item/entity.js"
 
 const log = getLogger("ItemMerger")
 
@@ -18,14 +19,13 @@ export function mergeItemData(items) {
 		let nameArr = nameArrs[name] || []
 		let found = nameArr.find(({item})=>{
 			let val = isEqual(i, item, ignore)
-			log("Found", val, item)
 			return val
 		})
 		if(found) {
-			log.debug("Found item for " + name, nameArr, i)
+			//log.debug("Found item for " + name, nameArr, i)
 			found.qty += qty
 		} else {
-			log.debug("Not found item for " + name, nameArr, i)
+			//log.debug("Not found item for " + name, nameArr, i)
 			nameArr.push({item: i, qty})
 		}
 		nameArrs[name] = nameArr

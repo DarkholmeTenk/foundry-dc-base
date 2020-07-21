@@ -30,6 +30,8 @@ Array.prototype.forEachAsyncOrdered = async function(fun) {
 	}
 }
 
+Array.prototype.mapAsync = Array.prototype.forEachAsync
+
 export const getLogger = getLoggerFactory("DC-Core")
 const log = getLogger("Util")
 
